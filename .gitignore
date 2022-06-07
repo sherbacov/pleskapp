@@ -2,3 +2,7 @@
 /plesk
 /.plesk
 /dist/
+/.idea/modules.xml
+/.idea/pleskapp.iml
+/.idea/vcs.xml
+/.idea/.gitignore
