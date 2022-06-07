@@ -22,6 +22,26 @@ type DomainInfo struct {
 	Sysuser        string
 }
 
+type DnsRecord struct {
+	ID    int
+	Type  string
+	Host  string
+	Value string
+	Opt   string
+}
+
+type DnsRecordManagement interface {
+	ListDnsRecords(domain string) ([]DnsRecord, error)
+	CreateDnsRecord(domain string, host string, value string) error
+	RemoveDnsRecordA(domain types.Domain, record string, ip string) error
+
+	//ListDomainDatabases(domain string) ([]DatabaseInfo, error)
+	//ListDatabaseServers() ([]DatabaseServerInfo, error)
+	//CreateDatabase(domain types.Domain, database types.NewDatabase, server types.DatabaseServer) (*DatabaseInfo, error)
+	//RemoveDatabase(database types.Database) error
+	//DeployDatabase(database types.Database, dbuser types.DatabaseUser, server types.DatabaseServer, filename string, isWindows bool, sysuser *string) error
+}
+
 type FTPManagement interface {
 	ListDomainFtpUsers(domain string, user types.FtpUser) ([]FTPUserInfo, error)
 	CreateFtpUser(domain string, user types.FtpUser) (*FTPUserInfo, error)

@@ -5,6 +5,7 @@ package cmd
 import (
 	appsCmd "github.com/plesk/pleskapp/plesk/cmd/apps"
 	databasesCmd "github.com/plesk/pleskapp/plesk/cmd/databases"
+	cmd "github.com/plesk/pleskapp/plesk/cmd/dns"
 	domainsCmd "github.com/plesk/pleskapp/plesk/cmd/domains"
 	serversCmd "github.com/plesk/pleskapp/plesk/cmd/servers"
 	syncCmd "github.com/plesk/pleskapp/plesk/cmd/sync"
@@ -24,6 +25,7 @@ func Execute() error {
 		appsCmd.AppsCmd,
 		databasesCmd.DatabasesCmd,
 		domainsCmd.DomainsCmd,
+		cmd.DnsCmd,
 		serversCmd.ServersCmd,
 		syncCmd.SyncCmd,
 		versionCmd,

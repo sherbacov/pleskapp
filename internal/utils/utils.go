@@ -15,6 +15,21 @@ import (
 
 const allowedChars = "abcdefghijklmnopqrstuvwxyz"
 
+func FilterDnsRecords(elements []types.Domain, filterOut string) ([]types.Domain, []types.Domain) {
+	var keep []types.Domain
+	var remove []types.Domain
+
+	for _, element := range elements {
+		if element.Name == filterOut {
+			remove = append(remove, element)
+		} else {
+			keep = append(keep, element)
+		}
+	}
+
+	return keep, remove
+}
+
 func FilterDomains(elements []types.Domain, filterOut string) ([]types.Domain, []types.Domain) {
 	var keep []types.Domain
 	var remove []types.Domain

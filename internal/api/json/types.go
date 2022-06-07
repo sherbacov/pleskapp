@@ -45,6 +45,14 @@ type domainInfo struct {
 	WWWRoot      string `json:"www_root"`
 }
 
+type dnsRecord struct {
+	ID    int    `json:"id"`
+	Type  string `json:"type"`
+	Host  string `json:"host"`
+	Value string `json:"value"`
+	Opt   string `json:"opt"`
+}
+
 type ftpUserInfo struct {
 	Name        string `json:"name"`
 	Home        string `json:"home"`

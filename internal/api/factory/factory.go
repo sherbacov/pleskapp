@@ -53,6 +53,10 @@ func GetDatabaseManagement(a api.Auth) api.DatabaseManagement {
 	return json.NewDatabases(buildClient(a))
 }
 
+func GetDnsRecordManagement(a api.Auth) api.DnsRecordManagement {
+	return json.NewDns(buildClient(a))
+}
+
 func GetDatabaseUserManagement(a api.Auth) api.DatabaseUserManagement {
 	return json.NewDatabases(buildClient(a))
 }

@@ -25,6 +25,21 @@ func jsonDomainInfoToInfo(domains []domainInfo) []api.DomainInfo {
 	return ds
 }
 
+func jsonDnsRecordToDnsRecords(records []dnsRecord) []api.DnsRecord {
+	var ds []api.DnsRecord
+
+	for _, i := range records {
+		ds = append(ds, api.DnsRecord{
+			ID:    i.ID,
+			Type:  i.Type,
+			Host:  i.Host,
+			Value: i.Value,
+			Opt:   i.Opt,
+		})
+	}
+	return ds
+}
+
 func jsonFTPUserInfoToInfo(users []ftpUserInfo) []api.FTPUserInfo {
 	var us []api.FTPUserInfo
 
